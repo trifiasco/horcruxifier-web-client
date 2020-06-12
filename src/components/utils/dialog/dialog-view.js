@@ -51,7 +51,6 @@ const DialogView = (props) => {
 
   const passwordOnChange = event => {
     const pass = event.target.value;
-    console.log(pass);
     setPassword(pass);
   }
 

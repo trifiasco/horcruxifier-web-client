@@ -6,17 +6,14 @@ import DialogView from './dialog-view';
 const DialogContainer = props => {
     const cleanUp = async (url, filename) => {
         const response = await sendRequest('DELETE', url, null, {filename : filename});
-        console.log(response);
-        return;
+        return response;
       } 
 
     const sendRequest = async (type, url, data, params) => {
       switch(type){
           case 'GET':
-              console.log('url', url);
               return await fetch(`${url}?filename=${encodeURIComponent(params.filename)}`)
           case 'POST':
-              console.log('data: ', data);
               return await axios.post(url, data, {})
           case 'DELETE':
               return await axios.delete(url, {params: params});
@@ -26,10 +23,8 @@ const DialogContainer = props => {
     }
 
     const onUpload = async (selectedFile, password, variant) => {
-      console.log('here', selectedFile);
       const data = new FormData();
       let baseUrl;
-      console.log(process.env);
       const serverUrl = process.env.NODE_ENV === 'development' ? `http://localhost:5001` : ''
       if(variant === 'horcruxify'){
           data.append('file', selectedFile.selectedFile);
