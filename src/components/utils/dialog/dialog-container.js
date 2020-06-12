@@ -13,9 +13,8 @@ const DialogContainer = props => {
     const sendRequest = async (type, url, data, params) => {
       switch(type){
           case 'GET':
-              const urlObject = new URL(url);
-              Object.keys(params).forEach(key => urlObject.searchParams.append(key, params[key]))
-              return await fetch(urlObject);
+              console.log('url', url);
+              return await fetch(`${url}?filename=${encodeURIComponent(params.filename)}`)
           case 'POST':
               console.log('data: ', data);
               return await axios.post(url, data, {})
