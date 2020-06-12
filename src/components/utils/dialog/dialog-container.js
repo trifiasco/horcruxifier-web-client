@@ -30,15 +30,16 @@ const DialogContainer = props => {
       console.log('here', selectedFile);
       const data = new FormData();
       let baseUrl;
+      const serverUrl = process.env.localServerUrl ? `${process.env.localServerUrl}/` : ''
       if(variant === 'horcruxify'){
           data.append('file', selectedFile.selectedFile);
-          baseUrl = 'http://localhost:5001/horcruxify/'
+          baseUrl = `${serverUrl}/horcruxify/`
       }
       else{
           for(var x = 0; x < selectedFile.selectedFile.length; x++){
               data.append('file', selectedFile.selectedFile[x]);
           }
-          baseUrl = 'http://localhost:5001/dehorcruxify/'
+          baseUrl = `${serverUrl}/dehorcruxify/`
       }
       data.append('password', password);
       const res = await sendRequest('POST', baseUrl, data, {});
