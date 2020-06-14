@@ -30,7 +30,7 @@ const getProperties = variant => {
             return {
               title: 'De-Horcruxify', 
               uploadText: 'Upload all 7 horcrux files', 
-              submitText: 'Horcruxify',
+              submitText: 'De-Horcruxify',
               passwordLabel: 'Enter the password',
               passwordAlert: 'The password you entered when you made the horcruxes. Wrong password won\'t retrieve the original file',
               validationErrorText: 'You must give both password and all 7 horcrux files to make it work!!!'
