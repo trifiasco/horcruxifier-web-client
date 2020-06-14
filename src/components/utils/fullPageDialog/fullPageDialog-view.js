@@ -42,7 +42,7 @@ export default function FullScreenDialog() {
       <Button variant="text" color="primary" onClick={handleClickOpen}>
         What is it?
       </Button>
-      <Button variant="text" color="default" onClick={() => {window.open('https://github.com/trifiasco/horcruxifier-web-backend/issues')}}>Report a bug</Button>
+      <Button variant="text" color="secondary" onClick={() => {window.open('https://github.com/trifiasco/horcruxifier-web-backend/issues')}}>Report a bug</Button>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>
@@ -74,9 +74,12 @@ export default function FullScreenDialog() {
             <p>
                 Basically this app takes a file and a password from the user. Then run an encryption on the file using the password as the encryption key. Then comes the extra layer - 
                 <ul>
-                    <li>After the encryption, this app divides the encrypted file into several chunks (Actually 7, because Voldemort did so!!)</li>
+                    <li>Click on the <b>HORCRUXIFIY</b> button</li>
+                    <li>Upload a file of your choice, and give a strong password. Then submit</li>
+                    <li>The app takes your file and password, runs an encryption routine.</li>
+                    <li><b>After the encryption, this app divides the encrypted file into several chunks</b> (Actually 7, because Voldemort did so!!)</li>
                     <li>Each chunks is written into files named after the names of the horcruxes. (fan tribute to Harry Potter ^_^)</li>
-                    <li>After that, this app zip those files, and returns to user as download.</li>
+                    <li>After that, this app zip those files, and returns that to you prompting download.</li>
                     <li>After downloading, if you unzip the folder, you will find 7 different encrypted files.</li>
                 </ul> 
             </p>
