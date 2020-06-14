@@ -59,45 +59,53 @@ export default function FullScreenDialog() {
         </AppBar>
 
         <DialogContent>
-          <DialogContentText>
-          Motivation
-Everyone has some files they want secured. How can you absolutely make sure that those are secured. Well, hypothetically you can't. Though there are multiple ways you can "Almost" make sure that your files are secured.
+          <DialogContentText style={{color:'black'}}>
+            <h1>Motivation</h1>
+                <p>
+                    Everyone has some files they want secured. How can you absolutely make sure that those are secured? Well, hypothetically you can't. Though there are multiple ways you can "Almost" make sure that your files are secured.
+                </p>
+                <p>
+                    I don't if anyone ever thought this before or not. But J. K. Rowling, the creator of Harry Potter, showed us an wonderful way to add a layer of security over the traditional encryption schemes. <b>Remember how Voldemort wanted to make sure that it's almost impossible to kill him? Yess... By making Horcruxes!!!</b>
+                </p>
 
-I don't if anyone ever thought this before or not. But J. K. Rowling showed us an wonderful way to do it. Remember how Voldemort wanted to make sure that it's almost impossible to kill him? By making Horcruxes!!!
+                <h3>And that's what this web application does!!!</h3>
+            
+            <h1>How it works?</h1>
+            <p>
+                Basically this app takes a file and a password from the user. Then run an encryption on the file using the password as the encryption key. Then comes the extra layer - 
+                <ul>
+                    <li>After the encryption, this app divides the encrypted file into several chunks (Actually 7, because Voldemort did so!!)</li>
+                    <li>Each chunks is written into files named after the names of the horcruxes. (fan tribute to Harry Potter ^_^)</li>
+                    <li>After that, this app zip those files, and returns to user as download.</li>
+                    <li>After downloading, if you unzip the folder, you will find 7 different encrypted files.</li>
+                </ul> 
+            </p>
+            <p>
+                <h4>Well, now what??</h4>
+                Now you have your file - <b>Encrypted and divided into multiple files</b>. You can the scatter the files into different locations(or not, your wish).
+                <b>If someone has to hack your file, they have to collect all 7 files and also the password you used for encryption.</b> I would say that would not be easy!!
+            </p>
 
-Installation
-If you have node on your machine, then open terminal. Change directory to whatever directory you wish this to be installed. Then just run this on terminal -
+            <p>
+                <h4>What if I want to see my original file??</h4>
+                Fear not!! This application works both ways.
+                <ul>
+                    <li>Click on the <b>DE-HORCRUXIFY</b> button.</li>
+                    <li>You have to now upload - All the 7 encrypted files.</li>
+                    <li>Give the original password</li>
+                    <li>Submit, and your original file should be downloaded.</li>
+                </ul>
+            </p>
+            <h1>Limitations</h1>
+            <p>
+                This is a personal project, done for purely fun purpose. I have tested against <b>images, pdfs, text</b> files. I think it should work for other files too.
+                If you use it and find any bug, please report it.
+            </p>
+            <Button variant="contained" color="secondary" onClick={() => {window.open('https://github.com/trifiasco/horcruxifier-web-backend/issues')}}>Report a bug</Button>
 
-npm i horcruxifier
-this will create a node_modules folder in the directory you installed the package. Then run this module by entering -
-
-node node_modules/horcruxifier
-How this works?
-This CLI lets you to make horcruxes (:P). If you run it, you will be asked to put a file name with the full path. Also a password. Then this application will encrypt the file and divide it into 7 different files (Horcruxes.. :P) in a folder. You can then distribute the 7 different files into different locations.
-
-Now what if you want to edit the file you just horcruxified? Don't worry, there's also an option to de-horcruxify as well. You need to accumulate all the 7 files into one folder and then put the folder name with full path in the application, and it will make that whole again. You can edit or do whatever you wish.
-
-Limitations
-So far it works for only text files. Also I did it for fun purpose and haven't done much testing. So use it with your own risk :P
-
-Future Benchmarks
-Make a web UI instead of CLI
-support different file formats than .txt
           </DialogContentText>
         </DialogContent>
-
-        {/* <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-          </ListItem>
-        </List> */}
       </Dialog>
     </div>
   );
 }
-
-//export default FullScreenDialog;
